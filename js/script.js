@@ -10,28 +10,25 @@
 
 
 
-let kmRun = prompt('Inserisci quanti km vuoi percorrere');
+let distance = prompt('Inserisci quanti km vuoi percorrere');
 let age = prompt('Inserisci la tua età di nascita');
 
-kmRun = parseInt(kmRun);
+distance = parseInt(distance);
 age = parseInt(age);
 
 let htmlOuput = document.getElementById('output');
-let ticketPriceKm = 0.21 * kmRun;
-let ticketPrice;
-let discount20 = ((ticketPriceKm * 20) / 100);
-let discount40 = ((ticketPriceKm * 40) / 100);
+let ticketPrice = 0.21 * distance;
 
 
 
 if (age >= 65) {
-    ticketPrice = discount40;
+    ticketPrice = (ticketPrice - (ticketPrice * 0.2));
     htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 } else if (age < 18) {
-    ticketPrice = discount20;
+    ticketPrice = (ticketPrice - (ticketPrice * 0.4));
     htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 } else {
-    ticketPrice = ticketPriceKm;
+    ticketPrice = ticketPrice;
     htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 }
 
