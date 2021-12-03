@@ -23,15 +23,16 @@ let discount20 = ((ticketPriceKm * 20) / 100);
 let discount40 = ((ticketPriceKm * 40) / 100);
 
 
+
 if (age >= 65) {
     ticketPrice = discount40;
-    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice} euro`;
+    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 } else if (age < 18) {
     ticketPrice = discount20;
-    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice} euro`;
+    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 } else {
     ticketPrice = ticketPriceKm;
-    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice} euro`;
+    htmlOuput.innerHTML = `Il prezzo da pagare è ${ticketPrice.toFixed(2)} euro`;
 }
 
 
